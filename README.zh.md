@@ -2,7 +2,7 @@
 
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（dsh）的 **Agent Teams** 插件：让 Team Lead 基于**某个现有 teammate** 的对话分叉出新的 teammate，而不是基于 Lead 自己的上下文。
 
-典型场景：一个长期存在的 `im-push` 专家已经用很多轮对话熟悉了某个子系统。Lead 用 `spawn_teammate_from` 可以从它已完成的历史创建 `im-push-b`，直接分配并行任务，不必重新讲解背景。
+典型场景：一个长期存在的 `billing` teammate 已经用很多轮对话熟悉了某个子系统。Lead 用 `spawn_teammate_from` 可以从它已完成的历史创建 `billing-refunds`，直接分配并行任务，不必重新讲解背景。
 
 插件提供两部分：
 
@@ -18,15 +18,14 @@
 
 ## 安装
 
-插件页面（Desktop / Web GUI）：点击 **Add package**，输入 `dsh-agent-team-member-fork`；也可以输入本地目录或 `.tgz` 的**绝对路径**。
+先开启 Agent Teams，再安装已发布的 npm 包。
 
-命令行（目标是 `desktop` profile 时，需先完全退出 Desktop）：
+插件页：**Add package**，输入 `dsh-agent-team-member-fork`。
+
+命令行（目标是 `desktop` profile 时，先完全退出 Desktop）：
 
 ```sh
 dsh plugin --profile <profile> add dsh-agent-team-member-fork
-# 本地开发（记录为 link:，直接加载仓库内的 lib/）
-npm ci && npm run build
-dsh plugin --profile <profile> add /absolute/path/to/dsh-agent-team-member-fork
 ```
 
 本包是一个 dsh bundle（`dsh.bundle.patch: ./cordis.patch.yml`），只插入自身的一行，配置为 `config: {}`，不会重复插入 Agent Teams 的行。

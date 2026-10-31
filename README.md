@@ -2,7 +2,7 @@
 
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) plugin for **Agent Teams**. It lets the Team Lead create a new teammate whose context is forked from an **existing teammate's** conversation, not from the Lead's.
 
-Example: a long-lived `im-push` expert has spent many turns learning a subsystem. With `spawn_teammate_from`, the Lead can start `im-push-b` from that expert's completed history and give it a parallel task, without explaining the subsystem again.
+Example: a long-lived `billing` teammate has spent many turns learning a subsystem. With `spawn_teammate_from`, the Lead can start `billing-refunds` from that teammate's completed history and give it a parallel task, without explaining the subsystem again.
 
 The plugin adds two things:
 
@@ -18,15 +18,14 @@ The new teammate is an ordinary Team member. It is a direct child of the Lead, i
 
 ## Install
 
-Plugins page (Desktop / Web GUI): **Add package**, then enter `dsh-agent-team-member-fork`. You can also enter an **absolute** path to a local checkout or a `.tgz`.
+Enable Agent Teams, then install the published npm package.
+
+Plugins page: **Add package**, then enter `dsh-agent-team-member-fork`.
 
 CLI (quit Desktop first when targeting the `desktop` profile):
 
 ```sh
 dsh plugin --profile <profile> add dsh-agent-team-member-fork
-# local development (records link:, imports lib/ from the checkout)
-npm ci && npm run build
-dsh plugin --profile <profile> add /absolute/path/to/dsh-agent-team-member-fork
 ```
 
 The package is a dsh bundle (`dsh.bundle.patch: ./cordis.patch.yml`). The bundle inserts one row with `config: {}`. It does not re-insert any Agent Teams rows.
