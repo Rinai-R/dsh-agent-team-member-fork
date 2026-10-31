@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Agent Team Member Fork",
+    "description": "Lets the Agent Teams Lead create a new teammate forked from an existing teammate's conversation (tool spawn_teammate_from, provider fork-from)."
+  }
+}

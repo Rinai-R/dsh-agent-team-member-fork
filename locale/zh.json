@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Agent Team 成员分叉",
+    "description": "让 Agent Teams 的 Lead 基于某个现有 teammate 的对话上下文分叉出新的 teammate（工具 spawn_teammate_from，provider fork-from）。"
+  }
+}
