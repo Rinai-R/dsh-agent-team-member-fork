@@ -1,6 +1,6 @@
 {
   "name": "dsh-agent-team-member-fork",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DeepSeek Harness Agent Teams plugin: let the Team Lead create a new teammate forked from an existing teammate's conversation.",
   "license": "MIT",
   "author": "Rinai-R",
